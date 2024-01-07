@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 100%;
+            margin: 0;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        video {
+            width: 100%;
+            max-width: 800px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class='logodiv'>
+        <img class='logoimg' src="./img/logo - Copy.png"></img>
+      </div>
+      <div class='cinemadiv'>
+        <img class='cinemaimg' src="img/CINEMAGEN - Copy.png"></img>
+        <h1 class='heading'>CINEMAGEN</h1>
+      </div>
+      <div class='examplediv'>
+        <div class='left-side'>
+          
+          
+          <p class='text-head'>Cinemagen</p>
+         
+           <p class='para'>Our pretrained model takes an image as input<br></br>
+          and generates a video as output</p>
+         
+          <p class='example'>Look at the example </p><br/>
+          <button class='getstarted'>Get Started</button>
+          
+        </div>
+        <div class='right-side'>
+          <img class='stain' src="img/stain1 - Copy.png"></img>
+          <img class='image' src="img/image - Copy.png"></img>
+          <img class='vid' src="img/vid - Copy.gif"></img>      </div>
+      </div>
+      <div class='logindiv'>
+        <div class='card'>
+          <h1>Login</h1>
+          
+          <form class='cardform'>
+          <img src="img/persona - Copy.png"></img><br/>
+          <input type='email' name='email' placeholder='email'></input><br></br>
+          <input type='password' name='password' placeholder='password'></input>
+          <button type='submit' name='submit'> Login </button>
+          </form>
+          <a href='./registration'>Register Now</a>
+        </div>
+  
+      </div>
+      </div>
+      <div class='regdiv'>
+        <div class='card'>
+          <h1>Register</h1>
+          <form class='cardform'>
+          <img src="img/persona - Copy.png"></img>
+          <input type='text' name='username' placeholder='username'></input>
+          <input type='email' name='email' placeholder='email'></input>
+          <input type='password' name='password' placeholder='password'></input>
+          <button type='submit' name='submit'> Register</button>
+          </form>
+          <a href='./login'>Already have an account</a>
+        </div>
+  </div>
+  <div class='maindivuse'>
+     
+    <h1>How Do I Use It?</h1>
+    <div class='contentdiv'>
+      <div class='sections3'>
+        <div class='sections3img'>
+        <img class='backgnd' src="img/hstain - Copy.png"></img>
+        <img class='icons' src="img/upload - Copy.png"></img>
+         
+      </div>
+      <div class='paragraph'>
+      <h3>1.Upload an image</h3>
+      <p>Upload the image<br/> from your system or <br/>simple drag and drop</p>
+      </div>
+      </div>
+      <div class='sections3'>
+        <div class='sections3img'>
+        <img class='backgnd' src="img/hstain - Copy.png"></img>
+        <img class='icons' src="img/play - Copy.png"></img>
+         
+      </div>
+      <div class='paragraph'>
+       <h3>2.Run the model</h3>
+       <p>Click on the "Run "<br/>button to   <br/>run the model</p>
+      </div>
+      </div>
+      <div class='sections3'>
+        <div class='sections3img'>
+        <img class='backgnd' src="img/hstain - Copy.png"></img>
+        <img class='icons' src="img/download - Copy.png"></img>
+         
+      </div>
+      <div class='paragraph'>
+       <h3>3.The output is produced</h3>
+      <p>You can download<br/> the video by clicking <br/>the download button.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class='redbox'>
+    <form class="upl" action="/generate_video" method="post">
+        <label class="labelindex" for="index">Enter Index:</label>
+        <input class="inputindex" type="number" name="index" required>
+         <button type="submit" class='uploadbtn'><img class='uploadlogo' src="img/uploadcream - Copy.png"></img><h6>Upload</h6></button> 
+    </form>
+          
+  </div>
+</div>
+<div class='redbox'>
+    <img class='runimg' src="img/image - Copy.png"></img>
+    <button class='runbtn'><img class='runlogo' src="img/playcream - Copy.png"></img><h6>Run</h6></button>        
+  </div>
+  <div class='redbox'>
+    {% if video_name %}
+    <video controls class="video">
+        <source src="{{ url_for('serve_video', filename=video_name) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+{% endif %}
+    <button class='runbtn'><img class='runlogo' src="img/downloadcream - Copy.png"></img><h6>Download</h6></button>        
+  </div>
+      
+   
+   
+
+    
+</body>
+</html>
